@@ -1,6 +1,6 @@
 # CoinHive-blocker
 <p align="center">
-  <img src="https://github.com/andreas0607/CoinHive-blocker/blob/master/128logo.png" width="128"/>
+  <img src="https://github.com/andreas0607/CoinHive-blocker/blob/master/ad.png" width="350"/>
 </p>
 Superlight script that removes coin-hive from all websites. The script both cancels all requests from coinhive and removes the script from the DOM before it loads.
 
