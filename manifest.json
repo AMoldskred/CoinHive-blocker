@@ -1,0 +1,31 @@
+{
+    "name": "Coin-Hive Blocker",
+    "description": "Removes Coin-Hive before it even runs on all sites",
+    "version": "0.4",
+    "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking"
+    ],
+    "browser_action": {
+        "default_icon": "128logo.png"
+    },
+    "background": {
+    "scripts": ["bg.js"],
+    "persistent": true
+  },
+    "content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+        "js": ["remove.js"],
+        "run_at": "document_start",
+        "all_frames": true
+        }
+    ], 
+    "manifest_version":2
+}
