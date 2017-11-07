@@ -13,7 +13,7 @@ This means it steals your CPU power and slows your computer down.
 
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2017 Andreas Moldskred
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
