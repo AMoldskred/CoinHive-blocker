@@ -1,7 +1,7 @@
 {
     "name": "Coin-Hive Blocker",
     "description": "Removes Coin-Hive before it even runs on all sites",
-    "version": "0.4",
+    "version": "0.5",
     "permissions": [
     "tabs",
     "storage",
@@ -16,6 +16,7 @@
     "scripts": ["bg.js"],
     "persistent": true
   },
+   "web_accessible_resources": ["popup.js","popup.html","donate.html","doante.js","ether.svg","steam.svg","bitcoin.png","paypal.png","profile.png"],
     "content_scripts": [
         {
         "matches": [
