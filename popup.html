@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="container">
+	<h3>Statistics</h3>
+<table id="stats">
+ <tr>
+    <th>Site</th>
+    <th>Times blocked</th>
+  </tr>
+
+</table>
+<a id="donate">Donate?</a>
+</div>
+
+<style>
+a{
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+body, html{
+	margin:0;
+	width:300px;
+	height:300px;
+	max-height:400px;
+	overflow-y:scroll;
+}
+#stats{
+	width: 100%;
+	border-collapse: collapse;
+}
+#stats td, #stats th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    max-width:150px;
+    
+	overflow: hidden;
+	text-overflow: ellipsis;
+} 
+#stats  tr{
+	max-width:300px;
+}
+span{
+	max-width:150px;
+	overflow:hidden;
+	
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#stats  tr:nth-child(even){background-color: #f2f2f2;}
+#stats tr:hover {background-color: #ddd;}
+#stats th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f9a825;
+    color: white;
+}
+.container{
+	width:100%;
+	height:100%;
+	text-align: center;
+}
+
+</style>
+<script src="popup.js"></script>
+</body>
+</html>
