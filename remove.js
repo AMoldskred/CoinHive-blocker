@@ -19,7 +19,13 @@ function deleteElements(selector) {
         }
     }
     function doDelete(nodes) {
-        [].forEach.call(nodes, function(node) { node.remove() });
+        [].forEach.call(nodes, function(node) { 
+            node.remove() 
+            console.log('doDelete called')
+           chrome.runtime.sendMessage({site: window.location.href}, function(){
+            console.log('response from background')
+           });
+        });
     }
 }
 
