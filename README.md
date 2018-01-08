@@ -1,8 +1,10 @@
-# CoinHive-blocker
+###### CoinHive-Blocker
 <p align="center">
-  <img src="https://github.com/andreas0607/CoinHive-blocker/blob/master/ad.png" width="350"/>
+  <img src="https://github.com/andreas0607/CoinHive-blocker/blob/master/ad.png" width="350" />
 </p>
- 
+
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/ccagdbjcbhmcdcbbknfebhhdbolnfimo.svg?style=flat-square)](https://chrome.google.com/webstore/detail/coin-hive-blocker/ccagdbjcbhmcdcbbknfebhhdbolnfimo)[![Maintenance](https://img.shields.io/maintenance/yes/2018.svg?style=flat-square)]()[![GitHub last commit](https://img.shields.io/github/last-commit/andreas0607/CoinHive-blocker.svg?style=flat-square)](https://github.com/andreas0607/CoinHive-blocker)
+
 Superlight script that removes coin-hive from all websites. The script both cancels all requests from coinhive and removes the script from the DOM before it loads.
 
 ### Please contribute to blacklist.json if you know miner-sites
