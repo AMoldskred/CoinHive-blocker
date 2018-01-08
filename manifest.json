@@ -1,14 +1,21 @@
 {
     "name": "Coin-Hive Blocker",
     "description": "Removes Coin-Hive before it even runs on all sites",
-    "version": "0.5",
+    "version": "0.8",
     "permissions": [
     "tabs",
     "storage",
     "<all_urls>",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
+    "https://raw.githubusercontent.com/andreas0607/CoinHive-blocker/master/blacklist.json",
+    "system.cpu",
+    "notifications",
+    "*://docs.google.com/forms/d/1cB1urxRqau67pWoN5s1oSfUyi9t0G5T3dMT_txc-o3Q/*"
     ],
+    "icons": {
+    "128": "128logo.png"
+    },
     "browser_action": {
         "default_icon": "128logo.png"
     },
