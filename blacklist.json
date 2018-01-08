@@ -1,5 +1,5 @@
 [  
-   "://*.cryptobara.com/*",
+   "*://*.cryptobara.com/*",
    "*://*.goredirect.party/*",
    "*://mine.nahnoji.cz/*",
    "*://jscdndel.com/*",
