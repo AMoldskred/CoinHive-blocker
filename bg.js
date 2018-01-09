@@ -22,31 +22,45 @@ function CpuUsage() {
     console.log('%c CPU USAGE: '+totaluse+'% ', 'background:#b7b7b7; color: red')
     if(totaluse > 50){
         highload++
-        console.log('Countdown to CPU-alert: '+highload+'/12')
+        console.log('Countdown to CPU-alert: '+highload+'/30')
     }else{
         highload = 0;
     }
-    if(highload === 12){
-        var opt = {
-        type: "basic",
-        title: 'High CPU-usage detected',
-        message: 'Please click this notification so that we can look into it',
-        priority: 1,
-        'requireInteraction': true,
-        iconUrl: 'chrome-extension://ccagdbjcbhmcdcbbknfebhhdbolnfimo/128logo.png'
-        };
-        chrome.notifications.create('HIGHCPU', opt);
-        chrome.notifications.onClicked.addListener(function(res){
-            chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs){
-                var site = tabs[0].url
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'https://docs.google.com/forms/d/1cB1urxRqau67pWoN5s1oSfUyi9t0G5T3dMT_txc-o3Q/formResponse', true);
-                 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                var data = 'entry.2146017821='+site;
-                xhr.send(data);
-            chrome.notifications.clear("HIGHCPU")
-            })
-        })
+    if(highload === 30){
+        fetch('https://raw.githubusercontent.com/andreas0607/CoinHive-blocker/master/ignore.json').then(function(response) {
+            response.json().then(function(ignore) {
+                var opt = {
+                    type: "basic",
+                    title: 'High CPU-usage detected',
+                    message: 'Please click this notification so that we can look into it',
+                    priority: 1,
+                    'requireInteraction': true,
+                    iconUrl: 'chrome-extension://ccagdbjcbhmcdcbbknfebhhdbolnfimo/128logo.png'
+                };
+                chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs){
+                        var site = tabs[0].url;
+                        chrome.notifications.clear("HIGHCPU")
+                        console.log(ignore.length)
+                    for(var i=0; i<ignore.length; i++){
+                        if(site.indexOf(ignore[i]) !== -1){
+                                console.log('Cleared')
+                                break;
+                       }else if(i == (ignore.length - 1)){
+                            chrome.notifications.create('HIGHCPU', opt);
+                            chrome.notifications.onClicked.addListener(function(res){
+                                chrome.notifications.clear('HIGHCPU')
+                                console.log('Reported: '+site)
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open('POST', 'https://docs.google.com/forms/d/1cB1urxRqau67pWoN5s1oSfUyi9t0G5T3dMT_txc-o3Q/formResponse', true);
+                                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                        var data = 'entry.2146017821='+site;
+                                        xhr.send(data);
+                                    })
+                                   }
+                       }
+                    })
+                })
+        })    
     }
   });
 }
