@@ -9,6 +9,8 @@ Superlight script that removes coin-hive from all websites. The script both canc
 
 ### Please contribute to blacklist.json if you know miner-sites
 
+* Update 0.9
+    - Add whitelist for reported sites to avoid unnecessary notifications  
 * Update 0.8
     - Add CPU-load detection
     - Blacklist is now fetched from github (https://github.com/andreas0607/CoinHive-blocker/blob/master/blacklist.json)
