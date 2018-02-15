@@ -82,7 +82,7 @@ chrome.storage.sync.get('block', function(res){
                 chrome.browserAction.setBadgeText({text:'Off'});
                 chrome.webRequest.onBeforeRequest.removeListener(callback);
             }else if(res.block == null){
-                chrome.browserAction.setBadgeText({text:'Off'});
+                chrome.storage.sync.set({'block': true});
             }
 
 });
