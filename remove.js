@@ -21,9 +21,9 @@ function deleteElements(selector) {
     function doDelete(nodes) {
         [].forEach.call(nodes, function(node) { 
             node.remove() 
-            console.log('doDelete called')
+            
            chrome.runtime.sendMessage({site: window.location.href}, function(){
-            console.log('response from background')
+            
            });
         });
     }
@@ -32,12 +32,11 @@ function deleteElements(selector) {
 
 
 chrome.storage.sync.get('block', function(res){
-    console.log('Block mining:'+res.block)
     if(res.block){
-      console.log('Removed items')
+      
 deleteElements('script[src="https://coin-hive.com/lib/coinhive.min.js"]','script[src="coinhive.min.js"]','script[src="https://coinhive.com/lib/coinhive.min.js"]')  
     }else{
-        console.log('Did not remove anything')
+        
     }
 
 });
