@@ -13,6 +13,7 @@ chrome.storage.sync.get('stat', function(res){
 		tr.appendChild(td2)
 		document.getElementById('stats').appendChild(tr)
 	}
+
 });
 chrome.browserAction.setPopup({
         	popup: ''
@@ -20,3 +21,10 @@ chrome.browserAction.setPopup({
 document.getElementById('donate').onclick = function(){
 	chrome.tabs.create({url:chrome.extension.getURL("donate.html")},function(){})
 }
+document.getElementById('notification').addEventListener("change", function() {
+  	console.log(this.checked);
+  	chrome.storage.sync.set({'notification': this.checked});
+})
+chrome.storage.sync.get('notification', function(res){
+	document.getElementById('notification').checked = res.notification;
+});
